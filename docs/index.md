@@ -10,6 +10,16 @@ hide:
 >
 > 把小红书装不下的干货，都放在这里。
 
+### Featured
+
+{{ featured([
+  ("搭建 Karpathy 本地知识库", "blog/karpathy-knowledge-base/", "blue"),
+  ("DeepSeek API 使用指南", "blog/deepseek-api-完全使用指南/", "green"),
+  ("Claude Code 进阶技巧", "blog/claude-code-进阶使用技巧/", "purple"),
+  ("OpenClaw 全攻略", "blog/openclaw-advanced/", "orange"),
+  ("Claude Code 泄漏版解析", "blog/claude-code-memory-analysis/", "teal"),
+]) }}
+
 ## 关于我
 
 🎓 USTC · 🤖 专注 AI 工具测评 / 前沿模型解读 / Fintech · 📩 学术间歇性输出，专注科研半挂

@@ -96,3 +96,17 @@ def define_env(env):
     def card_row(*cards):
         """Wrap multiple cards in a flex row."""
         return '<div class="repo-card-row">\n' + "\n".join(cards) + "\n</div>"
+
+    @env.macro
+    def featured(items):
+        """Featured carousel. items = list of (title, url, color)."""
+        colors = ["blue", "green", "purple", "orange", "teal"]
+        cards = []
+        for i, item in enumerate(items):
+            title, url = item[0], item[1]
+            color = item[2] if len(item) > 2 else colors[i % len(colors)]
+            cards.append(
+                f'<a class="featured-card featured-card--{color}" href="{url}">'
+                f'<div class="featured-card-title">{title}</div></a>'
+            )
+        return '<div class="featured-carousel">\n' + "\n".join(cards) + "\n</div>"
