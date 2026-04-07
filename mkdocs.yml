@@ -33,14 +33,14 @@ theme:
     - announce.dismiss
   palette:
     - scheme: default
-      primary: deep purple
-      accent: amber
+      primary: indigo
+      accent: blue
       toggle:
         icon: material/brightness-7
         name: 切换到深色模式
     - scheme: slate
-      primary: deep purple
-      accent: amber
+      primary: indigo
+      accent: blue
       toggle:
         icon: material/brightness-4
         name: 切换到浅色模式

@@ -1,34 +1,34 @@
 :root {
-  --wiki-accent: #6c3ea6;
-  --wiki-accent-soft: #f5f0ff;
-  --wiki-accent-strong: #4a2f78;
+  --wiki-accent: #3f51b5;
+  --wiki-accent-soft: #eef1fb;
+  --wiki-accent-strong: #283593;
   --wiki-card-bg: #ffffff;
-  --wiki-card-border: rgba(108, 62, 166, 0.18);
-  --wiki-card-shadow: 0 10px 24px rgba(76, 47, 120, 0.1);
-  --wiki-card-shadow-hover: 0 18px 36px rgba(76, 47, 120, 0.2);
-  --wiki-muted: #6a6680;
-  --wiki-prompt-bg: #f5f0ff;
-  --wiki-table-head: #4a2f78;
-  --wiki-table-zebra: #faf7ff;
-  --wiki-scrollbar: #8a62c7;
-  --wiki-scrollbar-track: #ece7f7;
-  --wiki-code-inline-bg: rgba(108, 62, 166, 0.12);
+  --wiki-card-border: rgba(63, 81, 181, 0.18);
+  --wiki-card-shadow: 0 10px 24px rgba(40, 53, 147, 0.08);
+  --wiki-card-shadow-hover: 0 18px 36px rgba(40, 53, 147, 0.16);
+  --wiki-muted: #607080;
+  --wiki-prompt-bg: #eef1fb;
+  --wiki-table-head: #283593;
+  --wiki-table-zebra: #f5f7ff;
+  --wiki-scrollbar: #7986cb;
+  --wiki-scrollbar-track: #e8eaf6;
+  --wiki-code-inline-bg: rgba(63, 81, 181, 0.1);
   --md-admonition-icon--prompt: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2024%2024'%3E%3Cpath d='M19,8L15.5,11.5V7.5L19,8M5,8L8.5,7.5V11.5L5,8M20,13V6L15,4V3A1,1,0,0,0,14,2H10A1,1,0,0,0,9,3V4L4,6V13A1,1,0,0,0,5,14H7V17A1,1,0,0,0,8,18H10A1,1,0,0,0,11,17V14H13V17A1,1,0,0,0,14,18H16A1,1,0,0,0,17,17V14H19A1,1,0,0,0,20,13M9.5,8.5A1.5,1.5,0,0,1,11,10A1.5,1.5,0,0,1,9.5,11.5A1.5,1.5,0,0,1,8,10A1.5,1.5,0,0,1,9.5,8.5M14.5,8.5A1.5,1.5,0,0,1,16,10A1.5,1.5,0,0,1,14.5,11.5A1.5,1.5,0,0,1,13,10A1.5,1.5,0,0,1,14.5,8.5Z'/%3E%3C/svg%3E");
   --md-admonition-icon--original: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%2024%2024'%3E%3Cpath d='M10.59,13.41C11.37,14.2,12.63,14.2,13.41,13.41L17.71,9.12C18.5,8.34,18.5,7.07,17.71,6.29C16.93,5.5,15.66,5.5,14.88,6.29L13.59,7.59L12.17,6.17L13.47,4.88C15.03,3.32,17.56,3.32,19.12,4.88C20.68,6.44,20.68,8.97,19.12,10.54L14.83,14.83C13.27,16.39,10.73,16.39,9.17,14.83L7.76,13.41L9.17,12L10.59,13.41M13.41,10.59C12.63,9.8,11.37,9.8,10.59,10.59L6.29,14.88C5.5,15.66,5.5,16.93,6.29,17.71C7.07,18.5,8.34,18.5,9.12,17.71L10.41,16.41L11.83,17.83L10.54,19.12C8.97,20.68,6.44,20.68,4.88,19.12C3.32,17.56,3.32,15.03,4.88,13.47L9.17,9.17C10.73,7.61,13.27,7.61,14.83,9.17L16.24,10.59L14.83,12L13.41,10.59Z'/%3E%3C/svg%3E");
 }
 
 [data-md-color-scheme="slate"] {
-  --wiki-card-bg: #1e1e2e;
-  --wiki-card-border: rgba(168, 132, 232, 0.25);
+  --wiki-card-bg: #1a1e2e;
+  --wiki-card-border: rgba(121, 134, 203, 0.25);
   --wiki-card-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
   --wiki-card-shadow-hover: 0 22px 40px rgba(0, 0, 0, 0.4);
-  --wiki-muted: #b8b3c7;
-  --wiki-prompt-bg: #2d2d3d;
-  --wiki-table-head: #37235b;
-  --wiki-table-zebra: #252436;
-  --wiki-scrollbar: #a889dd;
-  --wiki-scrollbar-track: #1d1b2a;
-  --wiki-code-inline-bg: rgba(168, 132, 232, 0.2);
+  --wiki-muted: #9ea8c0;
+  --wiki-prompt-bg: #242838;
+  --wiki-table-head: #283593;
+  --wiki-table-zebra: #1e2233;
+  --wiki-scrollbar: #7986cb;
+  --wiki-scrollbar-track: #1a1e2a;
+  --wiki-code-inline-bg: rgba(121, 134, 203, 0.2);
 }
 
 html {
@@ -90,7 +90,7 @@ body {
   right: 0.7rem;
   padding: 0.16rem 0.55rem;
   border-radius: 999px;
-  background: rgba(108, 62, 166, 0.14);
+  background: rgba(63, 81, 181, 0.14);
   color: var(--wiki-accent-strong);
   font-family: "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
   font-size: 0.64rem;
@@ -100,8 +100,8 @@ body {
 }
 
 [data-md-color-scheme="slate"] .prompt-block[data-lang]::before {
-  background: rgba(168, 132, 232, 0.22);
-  color: #d8c2ff;
+  background: rgba(121, 134, 203, 0.22);
+  color: #c5cae9;
 }
 
 .card-grid {
@@ -128,7 +128,7 @@ body {
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: rgba(108, 62, 166, 0.36);
+  border-color: rgba(63, 81, 181, 0.36);
   box-shadow: var(--wiki-card-shadow-hover);
 }
 
@@ -150,17 +150,17 @@ body {
 
 .md-typeset .md-tag {
   border-radius: 999px;
-  border: 1px solid rgba(108, 62, 166, 0.25);
-  background: rgba(108, 62, 166, 0.1);
+  border: 1px solid rgba(63, 81, 181, 0.25);
+  background: rgba(63, 81, 181, 0.1);
   color: var(--wiki-accent-strong);
   padding: 0.08rem 0.55rem;
   font-weight: 600;
 }
 
 [data-md-color-scheme="slate"] .md-typeset .md-tag {
-  border-color: rgba(168, 132, 232, 0.32);
-  background: rgba(168, 132, 232, 0.18);
-  color: #dcc6ff;
+  border-color: rgba(121, 134, 203, 0.32);
+  background: rgba(121, 134, 203, 0.18);
+  color: #c5cae9;
 }
 
 .md-typeset .md-tags {
@@ -178,13 +178,13 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   text-decoration: none;
-  border: 1px solid rgba(108, 62, 166, 0.25);
-  background: rgba(108, 62, 166, 0.08);
+  border: 1px solid rgba(63, 81, 181, 0.25);
+  background: rgba(63, 81, 181, 0.08);
 }
 
 [data-md-color-scheme="slate"] .md-typeset [data-md-tag] a {
-  border-color: rgba(168, 132, 232, 0.35);
-  background: rgba(168, 132, 232, 0.15);
+  border-color: rgba(121, 134, 203, 0.35);
+  background: rgba(121, 134, 203, 0.15);
 }
 
 .md-typeset :is(pre, .highlight pre) {
@@ -205,17 +205,17 @@ body {
 
 .md-typeset .admonition.prompt,
 .md-typeset details.prompt {
-  border-color: rgb(108, 62, 166);
+  border-color: rgb(63, 81, 181);
 }
 
 .md-typeset .prompt > .admonition-title,
 .md-typeset .prompt > summary {
-  background-color: rgba(108, 62, 166, 0.12);
+  background-color: rgba(63, 81, 181, 0.12);
 }
 
 .md-typeset .prompt > .admonition-title::before,
 .md-typeset .prompt > summary::before {
-  background-color: rgb(108, 62, 166);
+  background-color: rgb(63, 81, 181);
   -webkit-mask-image: var(--md-admonition-icon--prompt);
   mask-image: var(--md-admonition-icon--prompt);
 }
@@ -239,7 +239,7 @@ body {
 
 [data-md-color-scheme="slate"] .md-typeset .prompt > .admonition-title,
 [data-md-color-scheme="slate"] .md-typeset .prompt > summary {
-  background-color: rgba(168, 132, 232, 0.18);
+  background-color: rgba(121, 134, 203, 0.18);
 }
 
 [data-md-color-scheme="slate"] .md-typeset .original > .admonition-title,
