@@ -132,3 +132,23 @@ def define_env(env):
             f'<img src="/assets/images/blog/covers/{slug}.jpg" alt="cover" loading="lazy">'
             f'</div>'
         )
+
+    @env.macro
+    def prompt(content, tag="System Prompt"):
+        """炫酷的 Prompt 展示块，带一键复制."""
+        # 转义 HTML 字符防止注入，但保留换行
+        safe_content = content.replace("<", "&lt;").replace(">", "&gt;")
+        return f"""
+<div class="prompt-block-enhanced">
+  <div class="prompt-header">
+    <div class="prompt-tag">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      {tag}
+    </div>
+    <div class="prompt-copy-btn" onclick="copyPrompt(this)" title="复制提示词">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 4v8a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2z"/><path d="M16 18v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h2"/></svg>
+    </div>
+  </div>
+  <div class="prompt-content">{safe_content}</div>
+</div>
+"""
