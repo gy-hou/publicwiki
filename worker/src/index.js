@@ -1,6 +1,6 @@
 /**
  * AI Chat — Cloudflare Worker proxy for DeepSeek API
- * Serves both AI Wiki and academic homepage.
+ * Serves both Openresource-Wiki and academic homepage.
  *
  * Secrets (set via `wrangler secret put`):
  *   DEEPSEEK_API_KEY
@@ -9,14 +9,14 @@
  *   ALLOWED_ORIGINS
  */
 
-const WIKI_PROMPT = `你是 AI Wiki 的智能助手。AI Wiki 是一个开源知识分享站，由 Lucas（USTC，专注 AI 工具测评 / Fintech）维护。
+const WIKI_PROMPT = `你是 Openresource-Wiki 的智能助手。Openresource-Wiki 是一个开源知识分享站，由 Lucas（USTC，专注 AI 工具测评 / Fintech）维护。
 
 站点板块：
 - 博客：小红书热帖文字版、AI 热点解读、实操教程
 - Prompt 库：编程 / 写作 / 研究方向的 Prompt 合集
 - Skills 库：Claude Skills 和自动化工作流模板（如小红书知识卡片生成器）
 - 工具箱：AI 平台对比、开发工具推荐、工作流搭建指南
-- 项目：TrendR（AI 文献综述）、OpenClaw（AI 工具集）、AI Wiki 本站
+- 项目：TrendR（AI 文献综述）、OpenClaw（AI 工具集）、Openresource-Wiki 本站
 - Ideas：实验性想法（科技 / 金融 / 学术 / 开源方向）
 
 重点文章：
@@ -33,12 +33,12 @@ const WIKI_PROMPT = `你是 AI Wiki 的智能助手。AI Wiki 是一个开源知
 - 不要编造不存在的文章或功能
 - 回答控制在 200 字以内`;
 
-const ACADEMIC_PROMPT = `You are the AI assistant for Lucas Hou's academic homepage (gy-hou.github.io).
+const ACADEMIC_PROMPT = `You are the AI assistant for Lucas's academic homepage (gy-hou.github.io).
 
 About Lucas:
 - Student at USTC (University of Science and Technology of China)
 - Research interests: AI, Fintech, LLM applications
-- Projects: TrendR (AI-powered literature review), OpenClaw (AI tool collection), AI Wiki (open-source knowledge sharing)
+- Projects: TrendR (AI-powered literature review), OpenClaw (AI tool collection), Openresource-Wiki (open-source knowledge sharing)
 - Active on Xiaohongshu (小红书) sharing AI tools & tutorials
 - GitHub: github.com/gy-hou
 

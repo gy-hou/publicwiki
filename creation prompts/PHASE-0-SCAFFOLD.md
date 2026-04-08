@@ -22,7 +22,7 @@ MkDocs + Material for MkDocs + Material Blog Plugin + GitHub Pages
 ## 1. mkdocs.yml 完整配置
 
 ```yaml
-site_name: "AI Wiki"
+site_name: "Openresource-Wiki"
 site_url: https://gy-hou.github.io/openresource-wiki/
 site_author: gy-hou
 site_description: "AI 工具、Prompts、Skills 开源分享 | 小红书同名博主"
@@ -201,7 +201,7 @@ nav:
 
 ```
 docs/
-├── index.md                           # 首页（写"欢迎来到 AI Wiki"占位）
+├── index.md                           # 首页（写"欢迎来到 Openresource-Wiki"占位）
 ├── tags.md                            # 标签索引页，内容只写 [TAGS]
 ├── blog/
 │   ├── index.md                       # Blog 首页（blog plugin 会自动管理）
@@ -304,7 +304,7 @@ build/
 
 ### README.md
 ```markdown
-# AI Wiki
+# Openresource-Wiki
 
 AI 工具、Prompts、Skills 开源分享站。
 

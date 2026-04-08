@@ -1,5 +1,5 @@
 /**
- * AI Wiki Chat Widget
+ * Openresource-Wiki Chat Widget
  * Floating chat button → expandable panel → calls Cloudflare Worker
  */
 (function () {
@@ -18,7 +18,7 @@
     '<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>' +
     '<div id="ai-chat-panel">' +
     '<div id="ai-chat-header">' +
-    '<span>🤖 AI Wiki 助手</span>' +
+    '<span>🤖 Openresource-Wiki 助手</span>' +
     '<button id="ai-chat-close">&times;</button></div>' +
     '<div id="ai-chat-messages"></div>' +
     '<div id="ai-chat-input-row">' +
@@ -39,7 +39,7 @@
     panel.classList.toggle("open", isOpen);
     btn.classList.toggle("hidden", isOpen);
     if (isOpen && messages.length === 0) {
-      appendMsg("assistant", "你好！我是 AI Wiki 助手，可以回答关于本站内容的问题。试试问我「有什么好用的 Prompt？」");
+      appendMsg("assistant", "你好！我是 Openresource-Wiki 助手，可以回答关于本站内容的问题。试试问我「有什么好用的 Prompt？」");
     }
     if (isOpen) input.focus();
   };

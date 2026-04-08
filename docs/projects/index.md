@@ -25,7 +25,7 @@ hide:
 
 <a class="card" href="https://github.com/gy-hou/openresource-wiki" target="_blank">
   <div class="card-icon">🌐</div>
-  <div class="card-title">AI Wiki</div>
+  <div class="card-title">Openresource-Wiki</div>
   <div class="card-desc">就是本站！AI 工具、Prompts、Skills 的开源分享</div>
   <div class="card-meta">MkDocs · 🟢 活跃</div>
 </a>

@@ -107,7 +107,7 @@ unless otherwise noted.
 更新 README.md 为最终版本：
 
 ```markdown
-# AI Wiki
+# Openresource-Wiki
 
 [![Deploy](https://github.com/gy-hou/openresource-wiki/actions/workflows/deploy.yml/badge.svg)](https://github.com/gy-hou/openresource-wiki/actions/workflows/deploy.yml)
 

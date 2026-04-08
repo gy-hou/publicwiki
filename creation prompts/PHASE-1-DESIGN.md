@@ -112,7 +112,7 @@ hide:
   - toc
 ---
 
-# AI Wiki
+# Openresource-Wiki
 
 > 🤖 AI 工具、Prompts、Skills 的开源分享站
 >

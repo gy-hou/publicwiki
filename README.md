@@ -1,4 +1,4 @@
-# AI Wiki
+# Openresource-Wiki
 
 [![Deploy](https://github.com/gy-hou/openresource-wiki/actions/workflows/deploy.yml/badge.svg)](https://github.com/gy-hou/openresource-wiki/actions/workflows/deploy.yml)
 

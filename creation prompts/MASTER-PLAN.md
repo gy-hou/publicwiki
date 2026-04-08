@@ -1,4 +1,4 @@
-# AI Wiki — 总体计划
+# Openresource-Wiki — 总体计划
 
 > 本文件是所有执行方案的索引和架构决策记录。具体 Codex prompt 见各 Phase 文件。
 

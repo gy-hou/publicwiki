@@ -7,7 +7,7 @@ hide:
 
 ## 👋 你好
 
-我是 Guangyu Hou，USTC 金融硕士（大数据与金融科技方向），目前专注于 AI 工具测评、FinTech 研究和开源项目。
+我是 Lucas, 目前专注于 AI 工具测评、FinTech 研究和开源项目。
 
 > One day, you'll leave this world behind, so live a life you will remember.
 
@@ -27,23 +27,14 @@ hide:
 ## 🚀 在做的事
 
 - **RL Trading Agent** — PPO + Actor-Critic，MLP/Transformer 消融实验
-- **OpenClaw** — 开源 AI 助手系统（本地 Agent + QMD + Scrapling）
-- **AI Wiki** — 你正在看的这个站点
-- **小红书 + X** — AI 模型测评、技术分享、个人品牌建设
-- **日语学习中** — 五十音图阶段
+- **TrendR** — 开源 AI 助手系统（本地 Agent + QMD + Scrapling）
+- **Openresource-Wiki** — 你正在看的这个站点
 
 ## 📱 找到我
 
 | 平台 | 链接 |
 |------|------|
-| 学术主页 | [gy-hou.github.io](https://gy-hou.github.io) |
 | GitHub | [gy-hou](https://github.com/gy-hou) |
-| Google Scholar | [Google Scholar](https://scholar.google.com/) |
-| ResearchGate | [Guangyu-Hou-3](https://www.researchgate.net/profile/Guangyu-Hou-3) |
-| CNKI | [CNKI 主页](https://au.cnki.net/author/personalInfo/000059735960?platform=kns-author) |
-| LeetCode | [LeetCode](https://leetcode.com/) |
-| Kaggle | [garyhou](https://www.kaggle.com/garyhou) |
-| 邮箱 | houguangyu@ustc.edu |
 
 ## 🤔 为什么做这个 Wiki
 
@@ -59,9 +50,7 @@ hide:
 我的在线内容分为两个站点：
 
 - **[学术主页](https://gy-hou.github.io)** — 研究身份、论文发表、正式学术内容
-- **[AI Wiki](https://gy-hou.github.io/openresource-wiki/)** — Builder 身份、AI 工具测评、Prompt/Skills、实验性项目、技术笔记
-
-学术主页只放"能证明研究身份"的内容；更个性化、更实验性的内容都在这里。
+- **[Openresource-Wiki](https://gy-hou.github.io/openresource-wiki/)** — Builder 身份、AI 工具测评、Prompt/Skills、实验性项目、技术笔记
 
 ## 💬 反馈
 

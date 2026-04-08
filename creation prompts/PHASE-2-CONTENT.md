@@ -463,7 +463,7 @@ hide:
 
 <div class="card" markdown>
 <div class="card-icon">🌐</div>
-<div class="card-title">AI Wiki</div>
+<div class="card-title">Openresource-Wiki</div>
 <div class="card-desc">就是本站！AI 工具和 Prompt 的开源分享</div>
 <br>
 🟢 活跃 · MkDocs · [GitHub](https://github.com/gy-hou/openresource-wiki)

@@ -182,16 +182,16 @@ Tags 页面应该在 nav 的最后一项（在"关于"之后）。
 {% block extrahead %}
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ page.meta.title or page.title }} - AI Wiki">
+  <meta property="og:title" content="{{ page.meta.title or page.title }} - Openresource-Wiki">
   <meta property="og:description" content="{{ page.meta.description or config.site_description }}">
   <meta property="og:url" content="{{ page.canonical_url }}">
-  <meta property="og:site_name" content="AI Wiki">
+  <meta property="og:site_name" content="Openresource-Wiki">
   <meta property="og:image" content="{{ config.site_url }}assets/images/og-default.png">
   <meta property="og:locale" content="zh_CN">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ page.meta.title or page.title }} - AI Wiki">
+  <meta name="twitter:title" content="{{ page.meta.title or page.title }} - Openresource-Wiki">
   <meta name="twitter:description" content="{{ page.meta.description or config.site_description }}">
   <meta name="twitter:image" content="{{ config.site_url }}assets/images/og-default.png">
 
@@ -212,7 +212,7 @@ Tags 页面应该在 nav 的最后一项（在"关于"之后）。
 - `og-default.png` — 创建一个 `og-default.txt` 占位文件，内容说明需要的图片规格：
   ```
   占位文件。请替换为 1200x630 的 OG 分享图片。
-  建议包含：站点名称 "AI Wiki"、简短描述、品牌色。
+  建议包含：站点名称 "Openresource-Wiki"、简短描述、品牌色。
   ```
 
 - `favicon.txt` — 占位文件：
@@ -304,7 +304,7 @@ plugins:
 
 ```html
 <!-- RSS -->
-<link rel="alternate" type="application/rss+xml" title="AI Wiki" href="{{ config.site_url }}feed_rss_created.xml">
+<link rel="alternate" type="application/rss+xml" title="Openresource-Wiki" href="{{ config.site_url }}feed_rss_created.xml">
 ```
 
 确保 RSS feed 能正确生成（依赖 blog 文章有正确的 date frontmatter）。
