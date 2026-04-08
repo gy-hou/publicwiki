@@ -323,7 +323,7 @@ body {
 /* Center tabs in the bar, clear logo + palette on left, search on right */
 .md-tabs .md-grid {
   padding-left: 6rem;
-  margin-right: 14rem;
+  margin-right: 20rem;
   display: flex;
   justify-content: center;
 }
@@ -354,6 +354,15 @@ body {
 
 [data-md-toggle="search"]:checked ~ .md-header .md-search__form {
   border-radius: 0.5rem !important;
+}
+
+/* Constrain search so it doesn't overlap tabs when expanded */
+.md-search {
+  max-width: 16rem;
+}
+
+[data-md-toggle="search"]:checked ~ .md-header .md-search {
+  max-width: 20rem;
 }
 
 /* Hide all page H1 — navigation already indicates the section */
