@@ -17,12 +17,10 @@ hide:
 
 ## 🔧 技术栈
 
-| 层级 | 内容 |
+| 分类 | 内容 |
 |------|------|
-| 精通 | Python, Stata, SQL |
-| 熟练 | Java, PyTorch, Django |
-| 基础 | R, Matlab, Tableau, C |
-| 证书 | Securities Qualification, Google Data Analyst, Google IT Support |
+| 语言 | Python, JavaScript (JS), TypeScript, SQL |
+| 架构 | PyTorch |
 
 ## 🚀 在做的事
 
