@@ -22,7 +22,7 @@ hide:
 
 ## 关于我
 
-🎓 USTC · 🤖 专注 AI 工具测评 / 前沿模型解读 / Fintech · 📩 学术间歇性输出，专注科研半挂
+🎓 USTC · 🤖 专注 AI 工具测评 / 前沿模型解读 / Fintech · 🔬 [学术主页](https://gy-hou.github.io) · [更多关于我 →](about/)
 
 ## 板块导航
 
