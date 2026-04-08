@@ -50,13 +50,6 @@
       });
   };
 
-  // Safety net: bind click handler if inline onclick is removed in future.
-  document.addEventListener("DOMContentLoaded", function () {
-    var nodes = document.querySelectorAll(".share-btn--wechat");
-    nodes.forEach(function (node) {
-      if (node.dataset.shareBound === "1") return;
-      node.dataset.shareBound = "1";
-      node.addEventListener("click", window.shareToWechat);
-    });
-  });
+  // Keep single trigger path to avoid duplicate alerts:
+  // button uses inline onclick="return shareToWechat(event);"
 })();
