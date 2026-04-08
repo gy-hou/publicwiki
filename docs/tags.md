@@ -8,4 +8,4 @@ hide:
 
 > 🏷️ 按标签浏览所有内容
 
-[TAGS]
+<!-- material/tags -->
