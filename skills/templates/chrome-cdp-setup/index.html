@@ -12,29 +12,31 @@
         <meta name="author" content="gy-hou">
       
       
-        <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/tags/">
+        <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/skills/templates/chrome-cdp-setup/">
       
       
-        <link rel="prev" href="../about/roadmap/">
+        <link rel="prev" href="../auto-tag-extractor/">
       
       
+        <link rel="next" href="../llm-wiki-agent/">
       
-        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../feed_rss_created.xml">
-        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../feed_rss_updated.xml">
       
-      <link rel="icon" href="../assets/images/favicon.ico">
+        <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
+        <link rel="alternate" type="application/rss+xml" title="已更新内容的 RSS 订阅" href="../../../feed_rss_updated.xml">
+      
+      <link rel="icon" href="../../../assets/images/favicon.ico">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
     
     
       
-        <title>标签 - Openresource-Wiki</title>
+        <title>⭐ Chrome CDP 调试 - Openresource-Wiki</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -53,11 +55,11 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../assets/stylesheets/chat.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/chat.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,22 +73,22 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="标签 - AI Wiki">
+  <meta property="og:title" content="⭐ Chrome CDP 调试 - AI Wiki">
   <meta property="og:description" content="AI 工具、Prompts、Skills 开源分享 | 小红书同名博主">
-  <meta property="og:url" content="https://gy-hou.github.io/openresource-wiki/tags/">
+  <meta property="og:url" content="https://gy-hou.github.io/openresource-wiki/skills/templates/chrome-cdp-setup/">
   <meta property="og:site_name" content="AI Wiki">
   <meta property="og:image" content="https://gy-hou.github.io/openresource-wiki/assets/images/og-default.png">
   <meta property="og:locale" content="zh_CN">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="标签 - AI Wiki">
+  <meta name="twitter:title" content="⭐ Chrome CDP 调试 - AI Wiki">
   <meta name="twitter:description" content="AI 工具、Prompts、Skills 开源分享 | 小红书同名博主">
   <meta name="twitter:image" content="https://gy-hou.github.io/openresource-wiki/assets/images/og-default.png">
 
   <!-- 额外 SEO -->
   <meta name="author" content="gy-hou">
-  <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/tags/">
+  <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/skills/templates/chrome-cdp-setup/">
 
   
 
@@ -114,7 +116,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#chrome-cdp" class="md-skip">
           跳转至
         </a>
       
@@ -130,7 +132,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="Openresource-Wiki" class="md-header__button md-logo" aria-label="Openresource-Wiki" data-md-component="logo">
+    <a href="../../.." title="Openresource-Wiki" class="md-header__button md-logo" aria-label="Openresource-Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 15.5c0 .37-.1.7-.28 1-.34-.59-.98-1-1.72-1s-1.38.41-1.72 1c-.17-.3-.28-.63-.28-1 0-1.1.9-2 2-2s2 .9 2 2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2zm-5.5-2.5c-1.1 0-2 .9-2 2 0 .37.11.7.28 1 .34-.59.98-1 1.72-1s1.38.41 1.72 1c.18-.3.28-.63.28-1a2 2 0 0 0-2-2"/></svg>
@@ -150,7 +152,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              标签
+              ⭐ Chrome CDP 调试
             
           </span>
         </div>
@@ -258,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href=".." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -277,7 +279,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../blog/" class="md-tabs__link">
+        <a href="../../../blog/" class="md-tabs__link">
           
   
     
@@ -297,7 +299,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../prompts/" class="md-tabs__link">
+        <a href="../../../prompts/" class="md-tabs__link">
           
   
     
@@ -313,11 +315,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../skills/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -337,7 +341,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../toolbox/" class="md-tabs__link">
+        <a href="../../../toolbox/" class="md-tabs__link">
           
   
     
@@ -357,7 +361,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../projects/" class="md-tabs__link">
+        <a href="../../../projects/" class="md-tabs__link">
           
   
     
@@ -377,7 +381,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../ideas/" class="md-tabs__link">
+        <a href="../../../ideas/" class="md-tabs__link">
           
   
     
@@ -397,7 +401,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../about/" class="md-tabs__link">
+        <a href="../../../about/" class="md-tabs__link">
           
   
     
@@ -413,11 +417,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../../tags/" class="md-tabs__link">
         
   
     
@@ -446,9 +448,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -459,7 +459,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Openresource-Wiki" class="md-nav__button md-logo" aria-label="Openresource-Wiki" data-md-component="logo">
+    <a href="../../.." title="Openresource-Wiki" class="md-nav__button md-logo" aria-label="Openresource-Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 15.5c0 .37-.1.7-.28 1-.34-.59-.98-1-1.72-1s-1.38.41-1.72 1c-.17-.3-.28-.63-.28-1 0-1.1.9-2 2-2s2 .9 2 2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2zm-5.5-2.5c-1.1 0-2 .9-2 2 0 .37.11.7.28 1 .34-.59.98-1 1.72-1s1.38.41 1.72 1c.18-.3.28-.63.28-1a2 2 0 0 0-2-2"/></svg>
@@ -489,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,7 +537,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../blog/" class="md-nav__link ">
+            <a href="../../../blog/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -618,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/archive/2026/" class="md-nav__link">
+      <a href="../../../blog/archive/2026/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -699,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/ai-%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+      <a href="../../../blog/category/ai-%E5%B7%A5%E5%85%B7/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +723,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/ai-%E5%B7%A5%E7%A8%8B/" class="md-nav__link">
+      <a href="../../../blog/category/ai-%E5%B7%A5%E7%A8%8B/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -747,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../blog/category/%E7%83%AD%E7%82%B9%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
+      <a href="../../../blog/category/%E7%83%AD%E7%82%B9%E8%A7%A3%E8%AF%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -821,7 +821,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../prompts/" class="md-nav__link ">
+            <a href="../../../prompts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -855,7 +855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts/coding/claude-code-workflow/" class="md-nav__link">
+      <a href="../../../prompts/coding/claude-code-workflow/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -877,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts/writing/tech-blog-writer/" class="md-nav__link">
+      <a href="../../../prompts/writing/tech-blog-writer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts/research/knowledge-base-manager/" class="md-nav__link">
+      <a href="../../../prompts/research/knowledge-base-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -921,7 +921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts/coding/code-review-prompt/" class="md-nav__link">
+      <a href="../../../prompts/coding/code-review-prompt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts/writing/xiaohongshu-writer/" class="md-nav__link">
+      <a href="../../../prompts/writing/xiaohongshu-writer/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -965,7 +965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts/research/paper-reader/" class="md-nav__link">
+      <a href="../../../prompts/research/paper-reader/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -987,7 +987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts/system/ai-assistant-system/" class="md-nav__link">
+      <a href="../../../prompts/system/ai-assistant-system/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1013,6 +1013,8 @@
       
   
   
+    
+  
   
   
     
@@ -1033,21 +1035,24 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../skills/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1059,13 +1064,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Skills 库
@@ -1081,7 +1086,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../skills/templates/xhs-card-generator/" class="md-nav__link">
+      <a href="../xhs-card-generator/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1103,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../skills/templates/auto-tag-extractor/" class="md-nav__link">
+      <a href="../auto-tag-extractor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1122,10 +1127,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../skills/templates/chrome-cdp-setup/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    ⭐ Chrome CDP 调试
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1135,6 +1161,89 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      解决方案：双 Chrome 实例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心功能
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键经验
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1147,7 +1256,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../skills/templates/llm-wiki-agent/" class="md-nav__link">
+      <a href="../llm-wiki-agent/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1205,7 +1314,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../toolbox/" class="md-nav__link ">
+            <a href="../../../toolbox/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1264,7 +1373,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../toolbox/ai-platforms/" class="md-nav__link ">
+            <a href="../../../toolbox/ai-platforms/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1298,7 +1407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../toolbox/ai-platforms/model-comparison/" class="md-nav__link">
+      <a href="../../../toolbox/ai-platforms/model-comparison/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1462,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../toolbox/dev-tools/" class="md-nav__link ">
+            <a href="../../../toolbox/dev-tools/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1387,7 +1496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../toolbox/dev-tools/ai-coding-tools/" class="md-nav__link">
+      <a href="../../../toolbox/dev-tools/ai-coding-tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1442,7 +1551,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../toolbox/workflows/" class="md-nav__link ">
+            <a href="../../../toolbox/workflows/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1476,7 +1585,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../toolbox/workflows/wiki-setup-tools/" class="md-nav__link">
+      <a href="../../../toolbox/workflows/wiki-setup-tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1536,7 +1645,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../projects/" class="md-nav__link ">
+            <a href="../../../projects/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1595,7 +1704,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../ideas/" class="md-nav__link ">
+            <a href="../../../ideas/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1656,7 +1765,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../about/" class="md-nav__link ">
+            <a href="../../../about/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1690,7 +1799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../about/roadmap/" class="md-nav__link">
+      <a href="../../../about/roadmap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1716,19 +1825,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../tags/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1738,7 +1838,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1751,9 +1850,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -1764,6 +1861,77 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      解决方案：双 Chrome 实例
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      核心功能
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用方法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      环境变量
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键经验
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1776,12 +1944,44 @@
               <article class="md-content__inner md-typeset">
                 
                   
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">CDP</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">Chrome</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">skill</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">浏览器</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">自动化</span>
+      
+    
+  </nav>
+
+
   
-
-
-
-  
-    <a href="https://github.com/gy-hou/openresource-wiki/edit/main/docs/tags.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/gy-hou/openresource-wiki/edit/main/docs/skills/templates/chrome-cdp-setup.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -1789,11 +1989,167 @@
   
 
 
-<h1 id="_1">标签索引<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h1 id="chrome-cdp">Chrome CDP 双实例调试架构<a class="headerlink" href="#chrome-cdp" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>🏷️ 按标签浏览所有内容</p>
+<p>🛠️ Chrome 146+ 远程调试的完整解决方案，支持 Claude Code / Codex / OpenClaw</p>
 </blockquote>
-<p>[TAGS]</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>信息</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>类型</td>
+<td>浏览器自动化</td>
+</tr>
+<tr>
+<td>适用工具</td>
+<td>Claude Code, Codex, OpenClaw</td>
+</tr>
+<tr>
+<td>平台</td>
+<td>macOS</td>
+</tr>
+<tr>
+<td>版本</td>
+<td>2.0.0</td>
+</tr>
+<tr>
+<td>依赖</td>
+<td>Chrome 146+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1">问题背景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Chrome 146 引入了一条硬安全规则：</p>
+<blockquote>
+<p>当 <code>--user-data-dir</code> 指向默认 Chrome 目录时，<code>--remote-debugging-port</code> 会被拒绝。</p>
+</blockquote>
+<p>这意味着你<strong>不能</strong>直接在日常 Chrome 上启用 CDP 调试。尝试会触发：</p>
+<ul>
+<li>反复弹出 "Allow remote debugging?" 对话框</li>
+<li><code>selected page has been closed</code> 错误</li>
+<li><code>existing-session attach timed out</code> 错误</li>
+</ul>
+<h2 id="chrome">解决方案：双 Chrome 实例<a class="headerlink" href="#chrome" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>实例</th>
+<th>用途</th>
+<th>数据目录</th>
+<th>调试端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>日常 Chrome</td>
+<td>正常浏览</td>
+<td>系统默认</td>
+<td>无</td>
+</tr>
+<tr>
+<td>自动化 Chrome</td>
+<td>CDP 调试</td>
+<td><code>~/.chrome-cdp/automation</code></td>
+<td>19222</td>
+</tr>
+</tbody>
+</table>
+<p>两个实例使用不同的 <code>user-data-dir</code>，可以同时运行。Cookie 从日常 Chrome 同步到自动化实例，macOS 的 Keychain 加密机制保证跨目录复制后 Cookie 仍可解密。</p>
+<h2 id="_2">核心功能<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>一键启动</strong> — <code>start-chrome-cdp.sh</code> 自动同步 Cookie + 启动调试 Chrome（幂等）</li>
+<li><strong>Cookie 同步</strong> — 自动从日常 Chrome 复制登录态到自动化实例</li>
+<li><strong>Profile 隔离</strong> — 自动化目录仅保留 Default profile，避免污染</li>
+<li><strong>多工具兼容</strong> — 附带 Claude Code / Codex / OpenClaw 三套配置示例</li>
+<li><strong>完整排障指南</strong> — 覆盖 Chrome 146 所有常见 CDP 坑点</li>
+</ul>
+<h2 id="_3">安装<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Claude Code</label><label for="__tabbed_1_2">OpenClaw</label><label for="__tabbed_1_3">Codex</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 方式 1：直接复制</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.claude/skills
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>cp<span class="w"> </span>-r<span class="w"> </span>chrome-cdp-setup<span class="w"> </span>~/.claude/skills/
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 方式 2：在 CLAUDE.md 中引用</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Browser CDP: http://127.0.0.1:19222&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>CLAUDE.md
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>chrome-cdp-setup<span class="w"> </span>~/.openclaw/workspace/skills/
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>~/.codex/skills
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>cp<span class="w"> </span>-r<span class="w"> </span>chrome-cdp-setup<span class="w"> </span>~/.codex/skills/
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="_4">使用方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 1. 启动自动化 Chrome（自动同步 Cookie）</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>bash<span class="w"> </span>~/.chrome-cdp/scripts/start-chrome-cdp.sh
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 2. AI 工具连接 CDP 端口</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>curl<span class="w"> </span>-s<span class="w"> </span>http://127.0.0.1:19222/json/version
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 3. 完成后关闭</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>bash<span class="w"> </span>~/.chrome-cdp/scripts/stop-chrome-cdp.sh
+</span></code></pre></div>
+<h2 id="_5">环境变量<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>变量</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CDP_PORT</code></td>
+<td><code>19222</code></td>
+<td>CDP 调试端口</td>
+</tr>
+<tr>
+<td><code>CDP_DATADIR</code></td>
+<td><code>~/.chrome-cdp/automation</code></td>
+<td>自动化 Chrome 数据目录</td>
+</tr>
+<tr>
+<td><code>CHROME_PROFILE</code></td>
+<td>自动检测</td>
+<td>源 Chrome Profile 名称</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">关键经验<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Chrome 146+ <strong>禁止在默认数据目录上开启远程调试</strong> — 这是安全硬限制</li>
+<li><strong>永远不要复制 <code>Local State</code></strong> — 会引入幽灵 Profile</li>
+<li><strong>永远不要用 <code>existing-session</code> 传输</strong> — 会反复触发授权弹窗</li>
+<li>macOS 上 Cookie 加密密钥是 <strong>per-app</strong> 的，跨目录复制可正常解密</li>
+<li>启动第二个 Chrome 必须用 <code>open -na</code>，<code>open -a</code> 只会激活已有实例</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">最佳实践</p>
+<ul>
+<li>每次开始自动化前先运行 <code>start-chrome-cdp.sh</code>（幂等，已运行则跳过）</li>
+<li>Cookie 过期后重新运行 <code>sync-chrome-profile.sh</code> 刷新登录态</li>
+<li>操作完 tab 务必关闭，避免累积导致 <code>selected page has been closed</code></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>此 Skill 目前仅支持 macOS。Windows/Linux 的 Chrome 数据目录和加密机制不同，需要适配。</p>
+</div>
+<hr />
+<p><a class="md-button" href="https://github.com/gy-hou/openresource-wiki"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg></span> 查看完整 Skill 源码</a></p>
 
 
 
@@ -1816,7 +2172,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月7日 11:28:59">2026年4月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月8日 08:55:18">2026年4月8日</span>
   </span>
 
     
@@ -1826,7 +2182,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月7日 11:28:59">2026年4月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月8日 08:55:18">2026年4月8日</span>
   </span>
 
     
@@ -1835,8 +2191,6 @@
   </aside>
 
 
-
-  
 
 
 
@@ -1862,12 +2216,10 @@
   
     
       
-        
-      
       <nav class="md-footer__inner md-grid" aria-label="页脚" >
         
           
-          <a href="../about/roadmap/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 路线图">
+          <a href="../auto-tag-extractor/" class="md-footer__link md-footer__link--prev" aria-label="上一页: ⭐ 标签自动提取">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1877,11 +2229,27 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                路线图
+                ⭐ 标签自动提取
               </div>
             </div>
           </a>
         
+        
+          
+          <a href="../llm-wiki-agent/" class="md-footer__link md-footer__link--next" aria-label="下一页: LLM Wiki Agent">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                LLM Wiki Agent
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
         
       </nav>
     
@@ -1927,16 +2295,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit", "toc.follow", "announce.dismiss"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.tracking", "navigation.indexes", "navigation.footer", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tabs.link", "content.action.edit", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
-        <script src="../assets/javascripts/mathjax.js"></script>
+        <script src="../../../assets/javascripts/mathjax.js"></script>
       
         <script src="https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../assets/javascripts/chat.js"></script>
+        <script src="../../../assets/javascripts/chat.js"></script>
       
     
   </body>
