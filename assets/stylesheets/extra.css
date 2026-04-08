@@ -790,25 +790,35 @@ a:hover .xhs-card {
 }
 
 /* ">> 继续阅读" button style */
-.md-post .md-post__content .md-content__button {
-  display: inline-block;
-  padding: 0.3rem 0.9rem;
-  border-radius: 6px;
+.md-post .md-post__action a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.32rem 0.92rem;
+  border-radius: 7px;
+  border: 1px solid var(--wiki-accent-strong);
   background: var(--wiki-accent);
-  color: white !important;
+  color: #fff !important;
   font-size: 0.75rem;
   font-weight: 600;
   text-decoration: none !important;
   margin-top: 0.3rem;
-  transition: opacity 0.2s;
+  box-shadow: 0 2px 10px rgba(40, 53, 147, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
-.md-post .md-post__content .md-content__button:hover {
-  opacity: 0.85;
+.md-post .md-post__action a:hover {
+  transform: translateY(-1px);
+  background: var(--wiki-accent-strong);
+  border-color: var(--wiki-accent-strong);
+  box-shadow: 0 4px 12px rgba(40, 53, 147, 0.25);
 }
 
-.md-post .md-post__content .md-content__button::before {
+.md-post .md-post__action a::before {
   content: "» ";
+}
+
+[data-md-color-scheme="slate"] .md-post .md-post__action a {
+  border-color: rgba(197, 202, 233, 0.5);
 }
 
 
@@ -833,18 +843,123 @@ a:hover .xhs-card {
   border: 2px solid var(--wiki-scrollbar-track);
 }
 
-.md-content__inner {
-  animation: wiki-fade-in 0.35s ease both;
+/* ═══════════════════════════════════════
+   Blog Social Share
+   ═══════════════════════════════════════ */
+
+.blog-share {
+  margin: 3rem 0 2rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--wiki-card-border);
+  text-align: center;
 }
 
-@keyframes wiki-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
-  }
+.blog-share-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--wiki-muted);
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.blog-share-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none !important;
+  color: white !important;
+  transition: transform 0.2s, opacity 0.2s, box-shadow 0.2s;
+}
+
+.share-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.share-btn--wechat { background-color: #07c160; }
+.share-btn--xhs { background-color: #ff2442; }
+.share-btn--github { background-color: #24292f; }
+
+.share-btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+
+/* ═══════════════════════════════════════
+   Enhanced Prompt-Block
+   ═══════════════════════════════════════ */
+
+.prompt-block-enhanced {
+  position: relative;
+  margin: 1.5rem 0;
+  border: 1px solid var(--wiki-card-border);
+  border-left: 4px solid var(--wiki-accent);
+  border-radius: 12px;
+  background: var(--wiki-prompt-bg);
+  padding: 1.5rem;
+  overflow: hidden;
+  box-shadow: var(--wiki-card-shadow);
+}
+
+.prompt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dashed var(--wiki-card-border);
+}
+
+.prompt-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--wiki-accent);
+  color: white;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.prompt-copy-btn {
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--wiki-muted);
+  transition: background 0.2s, color 0.2s;
+}
+
+.prompt-copy-btn:hover {
+  background: rgba(63, 81, 181, 0.1);
+  color: var(--wiki-accent);
+}
+
+.prompt-content {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: var(--md-typeset-color);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+[data-md-color-scheme="slate"] .prompt-block-enhanced {
+  background: #1e2233;
 }
