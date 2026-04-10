@@ -82,7 +82,7 @@ hide:
 
 ---
 
-{{ xhs_profile("Lucas｜AI X Fintech", "5206954911", 961, 6283, url="https://xhslink.com/m/3lRU7a53RSt") }}
+{{ xhs_profile("Lucas｜AI X Fintech", "5206954911", 2043, 6862, url="https://xhslink.com/m/3lRU7a53RSt") }}
 
 <p style="text-align:center;font-size:0.72rem;opacity:0.5;margin-top:0.5rem;">
 <a href="https://gy-hou.github.io/openresource-wiki/feed_rss_created.xml">RSS</a>
