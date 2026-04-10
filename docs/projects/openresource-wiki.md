@@ -9,6 +9,8 @@ tags:
 
 > 你正在看的这个站点 — AI 工具、Prompts、Skills 的开源分享站
 
+![Openresource-Wiki Hero](../assets/images/projects/openresource-wiki.svg){ .project-hero }
+
 ## 要解决的问题
 
 小红书有字数和格式限制，很多干货只能做成图片，读者没法复制代码和 Prompt。好内容值得结构化，图片里的信息检索不到，不方便二次传播。
@@ -24,14 +26,16 @@ tags:
 
 ## 技术栈
 
-| 层级 | 技术 |
-|------|------|
-| 框架 | MkDocs + Material |
-| 部署 | GitHub Pages |
-| 模板 | Jinja2 |
-| 样式 | 自定义 CSS |
-| AI 聊天 | Cloudflare Worker + Claude API |
-| CI/CD | GitHub Actions |
+<div class="md-tags">
+  <span class="md-tag">MkDocs</span>
+  <span class="md-tag">Material for MkDocs</span>
+  <span class="md-tag">GitHub Pages</span>
+  <span class="md-tag">Jinja2</span>
+  <span class="md-tag">Custom CSS</span>
+  <span class="md-tag">Cloudflare Worker</span>
+  <span class="md-tag">Claude API</span>
+  <span class="md-tag">GitHub Actions</span>
+</div>
 
 ## 当前进度
 

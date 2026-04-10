@@ -9,6 +9,8 @@ tags:
 
 > 开源 AI 工具集 — 多 Agent 编排 + 可复用工作流模块
 
+![OpenClaw Hero](../assets/images/projects/openclaw.svg){ .project-hero }
+
 ## 要解决的问题
 
 现有 AI 编程工具（Claude Code、Cursor 等）各自为政，工作流、Skills、浏览器自动化等能力无法跨工具复用。需要一个统一的开源框架来编排多 Agent 工作流。
@@ -22,13 +24,16 @@ tags:
 
 ## 技术栈
 
-| 层级 | 技术 |
-|------|------|
-| 核心 | TypeScript / Python |
-| 浏览器 | Chrome CDP, Puppeteer |
-| Agent | Multi-agent orchestration |
-| 配置 | JSON Schema |
-| 分发 | npm / pip |
+<div class="md-tags">
+  <span class="md-tag">TypeScript</span>
+  <span class="md-tag">Python</span>
+  <span class="md-tag">Chrome CDP</span>
+  <span class="md-tag">Puppeteer</span>
+  <span class="md-tag">Multi-agent</span>
+  <span class="md-tag">JSON Schema</span>
+  <span class="md-tag">npm</span>
+  <span class="md-tag">pip</span>
+</div>
 
 ## 当前进度
 

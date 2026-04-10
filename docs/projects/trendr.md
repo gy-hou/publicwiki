@@ -9,6 +9,8 @@ tags:
 
 > AI 驱动的自动化研究趋势追踪与文献综述工具
 
+![TrendR Hero](../assets/images/projects/trendr.svg){ .project-hero }
+
 ## 要解决的问题
 
 研究者每天面对海量论文和技术博客，手动追踪领域趋势既耗时又容易遗漏。需要一个能自动收集、分析、总结研究趋势的工具。
@@ -21,14 +23,17 @@ tags:
 
 ## 技术栈
 
-| 层级 | 技术 |
-|------|------|
-| 语言 | Python |
-| ML 框架 | PyTorch |
-| 算法 | PPO, Actor-Critic |
-| 模型架构 | MLP, Transformer |
-| 数据采集 | Scrapling, QMD |
-| Agent | 本地 LLM Agent |
+<div class="md-tags">
+  <span class="md-tag">Python</span>
+  <span class="md-tag">PyTorch</span>
+  <span class="md-tag">PPO</span>
+  <span class="md-tag">Actor-Critic</span>
+  <span class="md-tag">MLP</span>
+  <span class="md-tag">Transformer</span>
+  <span class="md-tag">Scrapling</span>
+  <span class="md-tag">QMD</span>
+  <span class="md-tag">Local LLM Agent</span>
+</div>
 
 ## 当前进度
 
