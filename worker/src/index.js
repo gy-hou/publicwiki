@@ -111,13 +111,15 @@ function getSiteMode(siteMode, origin, referer) {
   const refererPath = safePathnameFromUrl(referer);
   const fromWikiPath = refererPath === "/openresource-wiki" || refererPath.startsWith("/openresource-wiki/");
   const fromWikiOrigin = !!(origin && origin.includes("openresource-wiki"));
+  const isLocalDev = /(localhost|127\.0\.0\.1)/.test(origin || "") || /(localhost|127\.0\.0\.1)/.test(referer || "");
 
-  // Headers are more trustworthy than client-provided body flags.
+  // Production: decide by request origin/path, not by client-provided body flags.
   if (fromWikiPath || fromWikiOrigin) {
     return "wiki";
   }
 
-  if (siteMode === "wiki" || siteMode === "academic") {
+  // Local dev fallback: allow explicit mode switch for testing.
+  if (isLocalDev && (siteMode === "wiki" || siteMode === "academic")) {
     return siteMode;
   }
 
