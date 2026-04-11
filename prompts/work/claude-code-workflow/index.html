@@ -6,19 +6,19 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="AI 工具、Prompts、Skills 开源分享 | 小红书同名博主">
+        <meta name="description" content="一个持续更新的 AI、智能体、研究工具与项目实践知识库">
       
       
         <meta name="author" content="gy-hou">
       
       
-        <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/prompts/coding/code-review-prompt/">
+        <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/prompts/work/claude-code-workflow/">
       
       
         <link rel="prev" href="../../research/knowledge-base-manager/">
       
       
-        <link rel="next" href="../../writing/xiaohongshu-writer/">
+        <link rel="next" href="../code-review-prompt/">
       
       
         <link rel="alternate" type="application/rss+xml" title="RSS 订阅" href="../../../feed_rss_created.xml">
@@ -29,7 +29,7 @@
     
     
       
-        <title>代码审查 - Openresource-Wiki</title>
+        <title>CC 工程化工作流 - OpenResource Wiki</title>
       
     
     
@@ -47,12 +47,6 @@
     
     
       
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Noto Sans SC";--md-code-font:"JetBrains Mono"}</style>
-      
     
     
       <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
@@ -69,33 +63,39 @@
     
     
   
+
+  <!-- Typography: Inter (sans) + JetBrains Mono (mono) — Latin subset only, system fallback for CJK -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
   
   
   
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="代码审查 - Openresource-Wiki">
-  <meta property="og:description" content="AI 工具、Prompts、Skills 开源分享 | 小红书同名博主">
-  <meta property="og:url" content="https://gy-hou.github.io/openresource-wiki/prompts/coding/code-review-prompt/">
-  <meta property="og:site_name" content="Openresource-Wiki">
+  <meta property="og:title" content="CC 工程化工作流 - OpenResource Wiki">
+  <meta property="og:description" content="一个持续更新的 AI、智能体、研究工具与项目实践知识库">
+  <meta property="og:url" content="https://gy-hou.github.io/openresource-wiki/prompts/work/claude-code-workflow/">
+  <meta property="og:site_name" content="OpenResource Wiki">
   <meta property="og:image" content="https://gy-hou.github.io/openresource-wiki/assets/images/og-default.png">
   <meta property="og:locale" content="zh_CN">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="代码审查 - Openresource-Wiki">
-  <meta name="twitter:description" content="AI 工具、Prompts、Skills 开源分享 | 小红书同名博主">
+  <meta name="twitter:title" content="CC 工程化工作流 - OpenResource Wiki">
+  <meta name="twitter:description" content="一个持续更新的 AI、智能体、研究工具与项目实践知识库">
   <meta name="twitter:image" content="https://gy-hou.github.io/openresource-wiki/assets/images/og-default.png">
 
   <!-- 额外 SEO -->
   <meta name="author" content="gy-hou">
-  <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/prompts/coding/code-review-prompt/">
+  <link rel="canonical" href="https://gy-hou.github.io/openresource-wiki/prompts/work/claude-code-workflow/">
 
   
 
   <!-- RSS -->
-  <link rel="alternate" type="application/rss+xml" title="Openresource-Wiki" href="https://gy-hou.github.io/openresource-wiki/feed_rss_created.xml">
+  <link rel="alternate" type="application/rss+xml" title="OpenResource Wiki" href="https://gy-hou.github.io/openresource-wiki/feed_rss_created.xml">
 
 
   </head>
@@ -117,7 +117,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#prompt" class="md-skip">
+        <a href="#claude-code-prompt" class="md-skip">
           跳转至
         </a>
       
@@ -133,7 +133,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="Openresource-Wiki" class="md-header__button md-logo" aria-label="Openresource-Wiki" data-md-component="logo">
+    <a href="../../.." title="OpenResource Wiki" class="md-header__button md-logo" aria-label="OpenResource Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 15.5c0 .37-.1.7-.28 1-.34-.59-.98-1-1.72-1s-1.38.41-1.72 1c-.17-.3-.28-.63-.28-1 0-1.1.9-2 2-2s2 .9 2 2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2zm-5.5-2.5c-1.1 0-2 .9-2 2 0 .37.11.7.28 1 .34-.59.98-1 1.72-1s1.38.41 1.72 1c.18-.3.28-.63.28-1a2 2 0 0 0-2-2"/></svg>
@@ -147,13 +147,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Openresource-Wiki
+            OpenResource Wiki
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              代码审查
+              CC 工程化工作流
             
           </span>
         </div>
@@ -285,7 +285,7 @@
   
     
   
-  博客
+  文章
 
         </a>
       </li>
@@ -347,7 +347,7 @@
   
     
   
-  Ideas
+  想法
 
         </a>
       </li>
@@ -372,23 +372,6 @@
         </a>
       </li>
     
-  
-
-      
-        
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="../../../tags/" class="md-tabs__link">
-        
-  
-    
-  
-  标签
-
-      </a>
-    </li>
   
 
       
@@ -420,13 +403,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Openresource-Wiki" class="md-nav__button md-logo" aria-label="Openresource-Wiki" data-md-component="logo">
+    <a href="../../.." title="OpenResource Wiki" class="md-nav__button md-logo" aria-label="OpenResource Wiki" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 15.5c0 .37-.1.7-.28 1-.34-.59-.98-1-1.72-1s-1.38.41-1.72 1c-.17-.3-.28-.63-.28-1 0-1.1.9-2 2-2s2 .9 2 2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2zm-5.5-2.5c-1.1 0-2 .9-2 2 0 .37.11.7.28 1 .34-.59.98-1 1.72-1s1.38.41 1.72 1c.18-.3.28-.63.28-1a2 2 0 0 0-2-2"/></svg>
 
     </a>
-    Openresource-Wiki
+    OpenResource Wiki
   </label>
   
     <div class="md-nav__source">
@@ -502,7 +485,7 @@
               
   
   <span class="md-ellipsis">
-    博客
+    文章
     
   </span>
   
@@ -519,7 +502,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
-            博客
+            文章
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -885,12 +868,6 @@
       
         
       
-        
-      
-        
-      
-        
-      
     
     
       
@@ -915,7 +892,7 @@
               
   
   <span class="md-ellipsis">
-    Prompts
+    提示词库
     
   </span>
   
@@ -932,7 +909,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
-            Prompts
+            提示词库
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -944,177 +921,46 @@
   
   
   
-    <li class="md-nav__item">
-      <a href="../claude-code-workflow/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ⭐ CC 工程化工作流
     
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../writing/tech-blog-writer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ⭐ 技术博客写作
     
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../research/knowledge-base-manager/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ⭐ LLM 知识库管理
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        
+      
+        
+      
+    
+    
       
       
         
       
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_2" >
+        
           
-  
-  <span class="md-ellipsis">
-    代码审查
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  <span class="md-ellipsis">
-    代码审查
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prompt_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Prompt 正文
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      效果示例
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      变体版本
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
+          <label class="md-nav__link" for="__nav_3_2_2" id="__nav_3_2_2_label" tabindex="0">
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../writing/xiaohongshu-writer/" class="md-nav__link">
-        
   
   <span class="md-ellipsis">
-    小红书写作
+    科研
     
   </span>
   
 
-      </a>
-    </li>
-  
-
-              
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            科研
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -1145,16 +991,391 @@
   
   
     <li class="md-nav__item">
-      <a href="../../system/ai-assistant-system/" class="md-nav__link">
+      <a href="../../research/knowledge-base-manager/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    System Prompt 模板
+    知识库管理
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    工作
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            工作
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CC 工程化工作流
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    CC 工程化工作流
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      适用场景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用技巧
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-review-prompt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    代码审查
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Verifier-skill/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    验收 Skill 模板
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_4" id="__nav_3_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    学习
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            学习
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../study/tech-blog-writer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    技术博客写作
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../study/ai-assistant-system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    通用 AI 助手
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2_5" id="__nav_3_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    生活
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            生活
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../life/xiaohongshu-writer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    小红书写作
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -1213,7 +1434,7 @@
               
   
   <span class="md-ellipsis">
-    Skills
+    技能库
     
   </span>
   
@@ -1230,7 +1451,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_3">
             <span class="md-nav__icon md-icon"></span>
-            Skills
+            技能库
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1247,7 +1468,7 @@
         
   
   <span class="md-ellipsis">
-    ⭐ 小红书卡片生成器
+    推荐：小红书卡片生成器
     
   </span>
   
@@ -1269,7 +1490,7 @@
         
   
   <span class="md-ellipsis">
-    ⭐ 标签自动提取
+    推荐：标签自动提取
     
   </span>
   
@@ -1291,7 +1512,7 @@
         
   
   <span class="md-ellipsis">
-    ⭐ Chrome CDP 调试
+    推荐：Chrome CDP 调试
     
   </span>
   
@@ -1313,7 +1534,7 @@
         
   
   <span class="md-ellipsis">
-    LLM Wiki Agent
+    wiki 智能体模板
     
   </span>
   
@@ -1589,7 +1810,7 @@
         
   
   <span class="md-ellipsis">
-    搭建个人 Wiki 的工具清单
+    搭建个人 wiki 的工具清单
     
   </span>
   
@@ -1735,7 +1956,7 @@
         
   
   <span class="md-ellipsis">
-    Openresource-Wiki
+    OpenResource Wiki
     
   </span>
   
@@ -1809,7 +2030,7 @@
               
   
   <span class="md-ellipsis">
-    Ideas
+    想法
     
   </span>
   
@@ -1821,7 +2042,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
-            Ideas
+            想法
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1922,27 +2143,6 @@
   
 
     
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../tags/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    标签
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
   </ul>
 </nav>
                   </div>
@@ -1970,18 +2170,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prompt_1" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      Prompt 正文
+      适用场景
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#prompt" class="md-nav__link">
     <span class="md-ellipsis">
-      效果示例
+      Prompt
     </span>
   </a>
   
@@ -1990,7 +2190,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      变体版本
+      使用技巧
     </span>
   </a>
   
@@ -2015,13 +2215,19 @@
       
       
       
-        <a href="../../../tags/#tag:code-review" class="md-tag">Code Review</a>
+        <a href="../../../tags/#tag:claude-code" class="md-tag">Claude Code</a>
       
     
       
       
       
         <a href="../../../tags/#tag:prompt" class="md-tag">prompt</a>
+      
+    
+      
+      
+      
+        <a href="../../../tags/#tag:效率" class="md-tag">效率</a>
       
     
       
@@ -2034,7 +2240,7 @@
 
 
   
-    <a href="https://github.com/gy-hou/openresource-wiki/edit/main/docs/prompts/coding/code-review-prompt.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/gy-hou/openresource-wiki/edit/main/docs/prompts/work/claude-code-workflow.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75z"/></svg>
     </a>
@@ -2042,68 +2248,49 @@
   
 
 
-<h1 id="prompt">代码审查 Prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h1>
+<h1 id="claude-code-prompt">Claude Code 工程化工作流 Prompt<a class="headerlink" href="#claude-code-prompt" title="Permanent link">&para;</a></h1>
 <blockquote>
-<p>💡 <strong>适用场景</strong>：让 AI 对你的代码进行系统性审查</p>
-<p><strong>推荐模型</strong>：Claude Opus / Sonnet</p>
-<p><strong>难度</strong>：⭐ 入门</p>
+<p>自研 Prompt：让 Claude Code 按"计划→执行→验证"闭环工作</p>
 </blockquote>
-<h2 id="prompt_1">Prompt 正文<a class="headerlink" href="#prompt_1" title="Permanent link">&para;</a></h2>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>你是一位资深软件工程师，请对以下代码进行全面的 Code Review。
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>请从以下维度逐一评审：
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>1. 正确性：代码逻辑是否正确？是否有 bug？
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>2. 安全性：是否存在安全漏洞（注入、XSS、敏感信息泄露等）？
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>3. 性能：是否有明显的性能问题？
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>4. 可读性：命名是否清晰？结构是否合理？
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>5. 可维护性：是否容易理解和修改？
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>6. 最佳实践：是否遵循了语言/框架的惯用写法？
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>对于每个问题，请：
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>- 指出具体的代码位置
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- 解释为什么是问题
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- 给出修改建议（附代码示例）
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>最后给出总体评分（1-10）和改进优先级排序。
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
-</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>代码如下：
-</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>[在这里粘贴代码]
-</span></code></pre></div>
-<!-- TODO: 可以替换为更精细的版本 -->
-
-<div class="admonition tip">
-<p class="admonition-title">使用技巧</p>
+<h2 id="_1">适用场景<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>可以指定编程语言让审查更精准</li>
-<li>把相关的测试代码也一起发，评审会更全面</li>
-<li>如果是大型项目，分模块发送效果更好</li>
+<li>中大型代码修改（跨多个文件）</li>
+<li>需要保证质量的 PR 提交</li>
+<li>避免 Claude Code "改着改着跑偏"</li>
 </ul>
-</div>
-<h2 id="_1">效果示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<!-- TODO: 添加实际使用截图 -->
-
-<h2 id="_2">变体版本<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">基础版</label><label for="__tabbed_1_2">安全专项版</label><label for="__tabbed_1_3">性能专项版</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>请审查以下代码，指出潜在问题并给出改进建议。
+<h2 id="prompt">Prompt<a class="headerlink" href="#prompt" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>你是我的编程搭档。接下来的任务请严格按以下流程执行：
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>## 第一步：理解
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>- 读取所有相关文件，列出你理解的当前状态
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>- 如果有不确定的地方，先问我，不要猜
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>## 第二步：计划
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>- 给出 3-5 步执行计划
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>- 每步包含：要改的文件、改动内容、验证方式
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>- 等我确认后再动手
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>## 第三步：执行
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>- 按计划逐步执行
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>- 每完成一步，运行验证命令并报告结果
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>- 如果验证失败，先诊断原因再修，不要盲目重试
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>## 第四步：收尾
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>- 列出所有改动文件
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>- 运行完整测试
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>- 生成 commit message（中文，说明为什么改而不是改了什么）
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>## 规则
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>- 只改必要的文件，不做风格性重构
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>- 不加额外的 docstring、注释、类型标注（除非我要求）
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>- 如果改动范围超出计划，先暂停告诉我
 </span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>你是一位安全工程师，请对以下代码进行安全审计。
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>重点检查：SQL 注入、XSS、CSRF、敏感信息泄露、
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>权限绕过、不安全的反序列化等 OWASP Top 10 问题。
-</span></code></pre></div>
-</div>
-<div class="tabbed-block">
-<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>你是一位性能优化专家，请分析以下代码的性能瓶颈。
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>关注：时间复杂度、空间复杂度、数据库查询效率、
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>缓存策略、并发问题等。
-</span></code></pre></div>
-</div>
-</div>
-</div>
+<h2 id="_2">使用技巧<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>配合 <code>/compact</code> 在长会话中保持上下文清晰</li>
+<li>复杂任务先用 Plan mode 对齐方向</li>
+<li>可以把这个 prompt 存为 Claude Code 的 custom skill</li>
+</ul>
 
 
 
@@ -2126,7 +2313,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月7日 11:28:59">2026年4月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月11日 20:10:08">2026年4月11日</span>
   </span>
 
     
@@ -2136,7 +2323,7 @@
     <span class="md-icon" title="创建日期">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14.47 15.08 11 13V7h1.5v5.25l3.08 1.83c-.41.28-.79.62-1.11 1m-1.39 4.84c-.36.05-.71.08-1.08.08-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8c0 .37-.03.72-.08 1.08.69.1 1.33.32 1.92.64.1-.56.16-1.13.16-1.72 0-5.5-4.5-10-10-10S2 6.5 2 12s4.47 10 10 10c.59 0 1.16-.06 1.72-.16-.32-.59-.54-1.23-.64-1.92M18 15v3h-3v2h3v3h2v-3h3v-2h-3v-3z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月7日 11:28:59">2026年4月7日</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2026年4月11日 20:10:08">2026年4月11日</span>
   </span>
 
     
@@ -2243,20 +2430,20 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                ⭐ LLM 知识库管理
+                知识库管理
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../writing/xiaohongshu-writer/" class="md-footer__link md-footer__link--next">
+          <a href="../code-review-prompt/" class="md-footer__link md-footer__link--next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                小红书写作
+                代码审查
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2273,7 +2460,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2025-2026 gy-hou | <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+      版权所有 &copy; 2025-2026 gy-hou | <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
     </div>
   
   
@@ -2304,23 +2491,21 @@
 </footer>
       
 
-  <div id="ai-chat-wrapper" aria-label="AI 聊天助手">
-    <button id="ai-chat-btn" type="button" aria-label="打开 AI 聊天助手" title="AI 聊天助手">
+  <div id="ai-chat-wrapper" aria-label="站内 AI 助手">
+    <button id="ai-chat-btn" type="button" aria-label="打开站内 AI 助手" title="站内 AI 助手">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.5 15.5c0 .37-.1.7-.28 1-.34-.59-.98-1-1.72-1s-1.38.41-1.72 1c-.17-.3-.28-.63-.28-1 0-1.1.9-2 2-2s2 .9 2 2M23 15v3c0 .55-.45 1-1 1h-1v1c0 1.11-.89 2-2 2H5a2 2 0 0 1-2-2v-1H2c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1h1c0-3.87 3.13-7 7-7h1V5.73c-.6-.34-1-.99-1-1.73 0-1.1.9-2 2-2s2 .9 2 2c0 .74-.4 1.39-1 1.73V7h1c3.87 0 7 3.13 7 7h1c.55 0 1 .45 1 1m-2 1h-2v-2c0-2.76-2.24-5-5-5h-4c-2.76 0-5 2.24-5 5v2H3v1h2v3h14v-3h2zm-5.5-2.5c-1.1 0-2 .9-2 2 0 .37.11.7.28 1 .34-.59.98-1 1.72-1s1.38.41 1.72 1c.18-.3.28-.63.28-1a2 2 0 0 0-2-2"/></svg>
     </button>
 
-    <div id="ai-chat-panel" role="dialog" aria-modal="false" aria-label="AI 聊天窗口">
+    <div id="ai-chat-panel" role="dialog" aria-modal="false" aria-label="站内 AI 聊天窗口">
       <div id="ai-chat-header">
-        <span>AI 聊天助手</span>
+        <span>站内 AI 助手</span>
         <button id="ai-chat-close" type="button" aria-label="关闭">×</button>
       </div>
 
-      <div id="ai-chat-messages">
-        <div class="ai-chat-msg ai-chat-assistant">你好！我是 Openresource-Wiki 的智能助手，你可以直接问我站内内容。</div>
-      </div>
+      <div id="ai-chat-messages" aria-live="polite"></div>
 
       <div id="ai-chat-input-row">
-        <input id="ai-chat-input" type="text" placeholder="输入你的问题..." aria-label="聊天输入">
+        <input id="ai-chat-input" type="text" placeholder="输入站内问题..." aria-label="聊天输入">
         <button id="ai-chat-send" type="button">发送</button>
       </div>
     </div>
